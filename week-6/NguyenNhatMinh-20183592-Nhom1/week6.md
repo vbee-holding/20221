@@ -7,7 +7,7 @@
 **BÀI TẬP TUẦN 6**
 
 
-![Link FreeCodeCamp](https://www.freecodecamp.org/fcc943eb5cf-86ae-4ea2-9a18-0e3de6a01da8)
+[Link FreeCodeCamp](https://www.freecodecamp.org/fcc943eb5cf-86ae-4ea2-9a18-0e3de6a01da8)
 
 ![JavaScript Algorithms and Data Structures Certification _ freeCodeCamp org - Google Chrome 12_11_2022 01_07_59](https://scontent.fhan2-1.fna.fbcdn.net/v/t1.15752-9/310786750_496633859171266_4019173520773410972_n.png?_nc_cat=101&ccb=1-7&_nc_sid=ae9488&_nc_ohc=co8iYFu-Zo8AX-nwid_&_nc_ht=scontent.fhan2-1.fna&oh=03_AdRFbzPFAkGFOz7G6qXu2fWoTTuTbOINmLtiNeIK7HQdeg&oe=6397F7EA)
 
