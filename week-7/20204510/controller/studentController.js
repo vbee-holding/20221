@@ -1,6 +1,5 @@
 const Student = require('../model/student');
 
-// add student
 const addStudent = async (req, res) => {
     try {
         const newStudent = new Student(req.body);
@@ -22,7 +21,8 @@ const getAllStudents = async (req, res) => {
 
 const getAStudent = async (req, res) => {
     try {
-        const student = await Student.findById(req.params.id);
+        const studentId = req.params.id;
+        const student = await Student.findById(studentId);
         res.status(200).json(student);
     } catch (error) {
         res.status(500).json(error);
@@ -31,9 +31,8 @@ const getAStudent = async (req, res) => {
 
 const updateStudent = async (req, res) => {
     try {
-        // const studentId = req.params.id;
-        // const student = await Student.updateOne({ _id: studentId }, { $set: req.body });
-        const student = await Student.findById(req.params.id);
+        const studentId = req.params.id;
+        const student = await Student.findById(studentId);
         await student.updateOne({ $set: req.body });
         res.status(200).json('Update successfully');
     } catch (error) {
@@ -43,7 +42,8 @@ const updateStudent = async (req, res) => {
 
 const deleteStudent = async (req, res) => {
     try {
-        await Student.findByIdAndDelete(req.params.id);
+        const studentId = req.params.id;
+        await Student.findByIdAndDelete(studentId);
         res.status(200).json('Delete successfully');
     } catch (error) {
         res.status(500).json(error);
