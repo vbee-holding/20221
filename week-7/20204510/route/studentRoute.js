@@ -3,14 +3,14 @@ const studentController = require('../controller/studentController');
 
 const route = express.Router();
 
-route.post('/', studentController.addStudent);
+route.post('/students', studentController.addStudent);
 
-route.get('/', studentController.getAllStudents);
+route.get('/students', studentController.getAllStudents);
 
-route.get('/:id', studentController.getAStudent);
+route.get('/students/:id', studentController.getStudent);
 
-route.put('/:id', studentController.updateStudent);
+route.put('/students/:id', studentController.updateStudent);
 
-route.delete('/:id', studentController.deleteStudent);
+route.delete('/students/:id', studentController.deleteStudent);
 
 module.exports = route;

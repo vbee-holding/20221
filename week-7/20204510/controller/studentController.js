@@ -19,7 +19,7 @@ const getAllStudents = async (req, res) => {
     }
 }
 
-const getAStudent = async (req, res) => {
+const getStudent = async (req, res) => {
     try {
         const studentId = req.params.id;
         const student = await Student.findById(studentId);
@@ -32,8 +32,8 @@ const getAStudent = async (req, res) => {
 const updateStudent = async (req, res) => {
     try {
         const studentId = req.params.id;
-        const student = await Student.findById(studentId);
-        await student.updateOne({ $set: req.body });
+        const updateFields = req.body;
+        await Student.findByIdAndUpdate(studentId, updateFields);
         res.status(200).json('Update successfully');
     } catch (error) {
         res.status(500).json(error);
@@ -49,4 +49,4 @@ const deleteStudent = async (req, res) => {
         res.status(500).json(error);
     }
 }
-module.exports = { addStudent, getAllStudents, getAStudent, updateStudent, deleteStudent }
+module.exports = { addStudent, getAllStudents, getStudent, updateStudent, deleteStudent }

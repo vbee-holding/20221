@@ -4,8 +4,8 @@ const config = require('./config');
 const studentRoute = require('./route/studentRoute');
 const app = express();
 
-app.listen(config.port, () => {
-    console.log(`Server is running on port: ${config.port}`);
+app.listen(config.PORT, () => {
+    console.log(`Server is running on port: ${config.PORT}`);
 })
 
 app.use(express.urlencoded({ extended: true }));
