@@ -33,7 +33,7 @@ const editStudent = async (req, res) => {
     }
 }
 
-//[POST] /students/create
+//[POST] /students
 const addStudent = async (req, res) => {
     try {
         const newStudent = new Student(req.body);
