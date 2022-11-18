@@ -1,15 +1,17 @@
 import express from 'express'
 import cors from 'cors'
-import 'express-async-errors'
-import restRouter from 'express-rest-routerss'
 import 'dotenv/config'
+import router from '@root/routes/index'
+import config from '@root/config/config'
 
 const app = express()
+const port = config.PORT
+const host = config.HOST
 
 // Enable CORS and body parse
 app.use(cors(), express.json(), express.urlencoded({ extended: true }))
 
-app.use(restRouter({ routeDir: '/routes' }))
+router(app)
 
 app.use((error, req, res, next) => {
     console.log(error)
@@ -17,9 +19,6 @@ app.use((error, req, res, next) => {
         message: 'Internal server error',
     })
 })
-
-const port = process.env.PORT || 9700
-const host = process.env.HOST || 'localhost'
 
 app.listen(port, async () => {
     console.log(`Listening: http://${host}:${port}`)
