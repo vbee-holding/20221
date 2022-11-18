@@ -1,6 +1,5 @@
 import express from 'express'
 import cors from 'cors'
-import 'dotenv/config'
 import router from '@root/routes/index'
 import config from '@root/config/config'
 
@@ -8,8 +7,10 @@ const app = express()
 const port = config.PORT
 const host = config.HOST
 
-// Enable CORS and body parse
-app.use(cors(), express.json(), express.urlencoded({ extended: true }))
+
+app.use(cors())
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
 
 router(app)
 
@@ -20,6 +21,6 @@ app.use((error, req, res, next) => {
     })
 })
 
-app.listen(port, async () => {
+app.listen(port,() => {
     console.log(`Listening: http://${host}:${port}`)
 })

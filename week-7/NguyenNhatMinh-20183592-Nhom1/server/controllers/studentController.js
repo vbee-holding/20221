@@ -1,6 +1,6 @@
 import Student from "../models/Student";
 
-export const getListStudents = async (req, res) => {
+export const getStudents = async (req, res) => {
     try {
         const student = await Student.find({})
         return res.json(student)
@@ -12,9 +12,8 @@ export const getListStudents = async (req, res) => {
 
 export const addStudent = async(req, res) => {
     try {
-        const {name, studentId, schoolYear, email, phoneNumber, image, address} = req.body
-        const dataCreate = {name, studentId, class: req.body.class, schoolYear, email, phoneNumber, image, address}
-        const addStudent = await Student.create([dataCreate])
+        const dataCreate = req.body
+        const addStudent = await Student.create(dataCreate)
         if (!addStudent) {
             return res.json({message: 'Add student failed'})
         }
@@ -24,7 +23,7 @@ export const addStudent = async(req, res) => {
     }
 }
 
-export const getStudentInfo = async (req, res) =>{
+export const getStudent = async (req, res) =>{
     try {
         const studentId = req.query.studentId.toString()
         const student = await Student.findOne({studentId})
@@ -38,7 +37,6 @@ export const getStudentInfo = async (req, res) =>{
 export const deleteStudent = async (req, res) => {
     try {
         const studentId = req.query.studentId.toString()
-        console.log({studentId})
         const student = await Student.deleteOne({studentId})
         if (!student) {
             return res.json({message: 'Delete student failed'})
@@ -53,8 +51,7 @@ export const deleteStudent = async (req, res) => {
 export const updateStudent = async (req, res) => {
     try {
         let filter = {}
-        const {name, studentId, schoolYear, email, phoneNumber, image, address} = req.body
-        const className = req.body.class
+        const {name, studentId, class: className ,schoolYear, email, phoneNumber, image, address} = req.body
 
         if (name) filter.name = name
         if (studentId) filter.studentId = studentId
