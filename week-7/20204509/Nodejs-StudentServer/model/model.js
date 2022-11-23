@@ -1,33 +1,33 @@
 const mongoose = require("mongoose");
 
 const studentSchema = new mongoose.Schema({
-    "Name": {
+    "name": {
         type: String,
         required: true
     },
-    "MSSV": {
+    "mssv": {
         type: String,
         required: true
     },
-    "Class": {
+    "class": {
         type: String,
         required: true
     },
-    "Course": {
+    "course": {
         type: Number,
         required: true
     },
-    "Email": {
+    "email": {
         type: String
     },
-    "Phone": {
+    "phone": {
         type: String
     },
-    "Image": {
+    "image": {
         type: String,
         default: "https://upanh.tv/image/BTlHEj"
     },
-    "Address": {
+    "address": {
         type: String
     }
 });
