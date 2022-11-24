@@ -1,0 +1,111 @@
+html, body{
+    font-family:'Verdana' ,  Monospace ;
+}
+
+.panel {
+    width: auto;
+    margin: 0 auto;
+    border: solid #4267b2 1px;
+    margin-top: 50px;
+    
+}
+
+.panel-heading {
+    background-color: #4267b2;
+    padding: 10px;
+    color: white;
+}
+
+.panel-body {
+    padding: 10px;
+}
+
+.panel-body label {
+    font-weight: bold;
+}
+.panel b{
+    float: left;
+    padding-top: 10px;
+}
+.panel form search{
+	float: right;
+    width: 27%;
+    margin:.1em 0 0em 10em;
+}
+.search input[type="submit"]{
+    border-radius: 10%;
+    float: right;
+	outline: none;
+    padding: 8px 0 8px;
+    width: 3%;
+    border: 1px solid;
+    position: relative;
+    background: url(./image/img-search.png)  7px 4px #0d09e7;
+
+}
+.search input[type="text"]{
+	outline: none;
+    padding: 10px;
+    color: #212121;
+    font-size: 13px;
+    width: 20%;
+    background: #fff;
+    border: 1px solid #999;
+    float: right;
+}
+.table {
+    width: 100%;
+    text-align: center;
+}
+
+.table tr {
+    border-bottom: solid blue 1px;
+}
+
+.header{
+	background:#ede43d;
+}
+.header img{
+    width:25px;
+    height:25px;
+}
+.name-header{
+	float:left;
+}
+.name-header a{
+	font-size: 1.3em;
+    color: #fff;
+    text-decoration: none;
+    padding: .5em 3em;
+    background: #a04b4b;
+	display:block;
+}
+
+.header_right1 {
+	float:right;
+
+}
+.header_right1   button{
+    
+	font-size: 1.2em;
+    color: #fff;
+    text-decoration: none;
+    padding: .5em 3em;
+	display:block;
+    
+}
+.header_right1   a{
+    color: #fff;
+    text-decoration: none;
+	display:block;
+    
+}
+td img{
+        width:70px;
+        height:70px;
+}
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
