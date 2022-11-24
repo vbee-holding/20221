@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students</title>
+    <link rel="stylesheet" href="./main.css">
+    <script src="./main.js"></script>
+    <script src="./search.js" type="module"></script>
+</head>
+<body>
+    <div class="header">
+        <h1>Quản lý sinh viên</h1>
+    </div>
+    <div class="navbar">
+        <ul class="navlist">
+            <li class="navchild"><div><a href="#sec1">Danh sách sinh viên</a></div></li>
+            <li class="navchild"><div><a href="#sec2">Thông tin chi tiết</a></div></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <section id="sec1">
+            <div class="divform">
+                <h2 style="text-align:center">Danh sách sinh viên</h2>
+                <div class="info">
+                    <table>
+                        <thead>
+                            <tr class="tab-head">
+                                <th>Mã Sinh viên</th>
+                                <th>Họ và tên</th>
+                                <th>Khóa</th>
+                                <th>Lớp</th>
+                            </tr>
+                        </thead>
+                        <tbody id="data-output">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    <section id="sec2">
+        <h2 style="text-align:center">Tìm thông tin sinh viên</h2>
+        <div class="searchbar">
+            <h3>Nhập tên của sinh viên cần tìm</h3>
+            <div class="searchbox">
+                <input type="search" id="searchfield">
+                <button type="submit" id="searchbtn" >Tìm kiếm</button>
+            </div>
+        </div>
+        <div id="data-infor">
+            
+        </div>
+    </section>
+</body>
+<footer>
+    <div class="footer"></div>
+</footer>
+</html>
