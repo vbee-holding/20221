@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Student Infomation</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Student Information</h1>
+    <table border="1">
+      <tr>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>MSSV</th>
+        <th>CLASS</th>
+        <th>COURSE</th>
+        <th>EMAIL</th>
+        <th>IMAGE</th>
+        <th>ADRESS</th>
+        <th>ACTION</th>
+      </tr>
+      <% students.forEach(item => { %>
+        <tr>          
+          <td><%= item._id %> </td>
+          <td><%= item.name %> </td>
+          <td><%= item.MSSV %> </td>
+          <td><%= item.class %> </td>
+          <td><%= item.course %> </td>
+          <td><%= item.email %> </td>
+          <td ><img src=<%= item.image.url %> width="200" height="200"> </td>
+          <td><%= item.adress %> </td>
+          <td><a href="/form-update/<%= item._id %>">PUT</a>||<a href="/form-delete/<%= item._id %>">DELETE||<a href="/form-add/">POST</a></td>
+        </tr>
+      <% }) %>
+    </table>
+  </body>
+</html>
+
