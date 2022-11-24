@@ -1,0 +1,82 @@
+[
+    {
+        "id":20181111,
+        "email": "paolo@hust.edu.vn",
+        "fullName": "Paolo Maldini",
+        "class": "IT2-04",
+        "year": "63",
+        "phone": "0392673583",
+        "address": "10 Xã Đàn, Đống Đa, Hà Nội",
+        "avatar": "./public/img1.jpeg"
+    },
+    {
+        "id":20182222,
+        "email": "delpiero@hust.edu.vn",
+        "fullName": "Alexandro Del Piero",
+        "class": "IT1-02",
+        "year": "63",
+        "phone": "0392678899",
+        "address": "22 Phố Huế, Hà Nội",
+        "avatar": "./public/img2.jpg"
+    },
+    {
+        "id":20178777,
+        "email": "davidbeckham@hust.edu.vn",
+        "fullName": "David Beckham",
+        "class": "IT1-01",
+        "year": "62",
+        "phone": "0392674576",
+        "address": "276 Đường Láng, Đống Đa, Hà Nội",
+        "avatar": "./public/img3.jpg"
+    },
+    {
+        "id":20198888,
+        "email": "cannavaro@hust.edu.vn",
+        "fullName": "Fabio Cannavaro",
+        "class": "IT1-05",
+        "year": "64",
+        "phone": "0392689987",
+        "address": "Vinh, Nghệ An",
+        "avatar": "./public/img4.jpg"
+    },
+    {
+        "id":20202022,
+        "email": "ikercasillas@hust.edu.vn",
+        "fullName": "Iker Casillas",
+        "class": "ET1-09",
+        "year": "65",
+        "phone": "0328981523",
+        "address": "Tam Điệp, Ninh Bình",
+        "avatar": "./public/img5.jpg"
+    },
+    {
+        "id":20214765,
+        "email": "ricardo@hust.edu.vn",
+        "fullName": "Ricardo Kaka",
+        "class": "ET1-12",
+        "year": "66",
+        "phone": "0328955667",
+        "address": "Hồng Lĩnh, Hà Tĩnh",
+        "avatar": "./public/img6.jpg"
+    },
+    {
+        "id":20218877,
+        "email": "totti@hust.edu.vn",
+        "fullName": "Francesco Totti",
+        "class": "IT2-06",
+        "year": "66",
+        "phone": "0328567889",
+        "address": "Hạ Long, Quảng Ninh",
+        "avatar": "./public/img7.jpg"
+    },
+    {
+        "id":20178899,
+        "email": "andreaPirlo@hust.edu.vn",
+        "fullName": "Andrea Pirlo",
+        "class": "IT1-03",
+        "year": "62",
+        "phone": "0328903456",
+        "address": "Phủ Lý, Hà Nam",
+        "avatar": "./public/img8.jpg"
+    }
+]
