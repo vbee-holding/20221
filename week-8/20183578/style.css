@@ -1,0 +1,28 @@
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: lightblue;
+  }
+  
+  h1 {
+    font-size: 50px;
+    color: white;
+    text-align: center;
+  }
+  
+  td {
+    font-family: verdana;
+    font-size: 20px;
+  }
+  th {
+    font-family: verdana;
+    font-size: 40px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+/* This is a single-line comment */
