@@ -8,7 +8,7 @@ import {
 const studentRouter = express.Router()
 
 studentRouter.get('/info', getStudent)
-studentRouter.get('/líst', getStudents)
+studentRouter.get('/list', getStudents)
 studentRouter.post('/', addStudent)
 studentRouter.put('/', updateStudent)
 studentRouter.delete('/', deleteStudent)
