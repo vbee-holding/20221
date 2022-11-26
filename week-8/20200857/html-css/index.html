@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>week8</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="./assets/font/fontawesome-free-6.2.0-web/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <div class="app">
+        <header class="header">
+            <div class="header__nav">
+                <ul class="header__nav-list">
+                    <li class="header__nav-item"><img class="header__nav-item-img" src="./assets/image/logoBk.png" alt="logo bách khoa"></li>
+                    <li class="header__nav-item header__nav-edit">
+                        <div class="header__nav-item-h1">
+                            HỆ THỐNG QUẢN LÝ THÔNG TIN SINH VIÊN
+                        </div>
+                        <div class="header__nav-item-h3">
+                            TRƯỜNG ĐẠI HỌC BÁCH KHOA HÀ NỘI 
+                        </div>
+                        <div class="header__nav-item-h3">
+                            TRƯỜNG CÔNG NGHỆ THÔNG TIN VÀ TRUYỀN THÔNG
+                        </div>
+                    </li>
+                </ul>
+                <ul class="header__nav-list">
+                    <button class="header__nav-list-btn">Đăng xuất</button>
+                </ul>
+            </div>
+            <div class="header__title">
+                <ul class="header__title-list">
+                    <button class="header__title-btn-color">DS LỚP SINH VIÊN</button>
+                    <button class="header__title-btn">THỜI KHÓA BIỂU</button>
+                    <button class="header__title-btn">NCKH</button>
+                    <button class="header__title-btn">BIỂU MẪU</button>
+                    <button class="header__title-btn">HỌC PHẦN</button>
+                    <button class="header__title-btn">ĐỒ ÁN</button>
+                    <button class="header__title-btn">HỎI ĐÁP</button>
+                </ul>
+            </div>
+        </header>
+        <!-- end header -->
+        <div class="container">
+            <input type="text" class="input" placeholder="Nhập tên sinh viên hoặc mã số sinh viên...">
+            <button class="input__btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <div class="container__list">
+                <table class="container__list-table">
+                    <tr>
+                        <th class="container__list-h">STT</th>
+                        <th class="container__list-h">Ảnh đại diện</th>
+                        <th class="container__list-h">MSSV</th>
+                        <th class="container__list-h">Họ tên</th>
+                        <th class="container__list-h">Lớp</th>
+                        <th class="container__list-h">Khóa</th>
+                        <th class="container__list-h">Email</th>
+                        <th class="container__list-h">Điện thoại</th>
+                        <th class="container__list-h">Địa chỉ</th>
+                        <th class="container__list-h">Trạng thái</th>
+                    </tr>
+                    <tr>
+                        <td class="container__list-row">1</td>
+                        <td class="container__list-row"><img class="container__list-img" src="./assets/image/messi.jpg" alt="anh cua messi"></td>
+                        <td class="container__list-row">20200000</td>
+                        <td class="container__list-row">Lionel Messi</td>
+                        <td class="container__list-row">IT1-01</td>
+                        <td class="container__list-row">K65</td>
+                        <td class="container__list-row">lionelmessi@gmail.com</td>
+                        <td class="container__list-row">00000000</td>
+                        <td class="container__list-row">Hà Nội, Việt Nam</td>
+                        <td class="container__list-row">Đang học</td>
+                    </tr>
+                    <tr>
+                        <td class="container__list-row">2</td>
+                        <td class="container__list-row"><img class="container__list-img" src="./assets/image/ronaldo.jpg" alt="anh cua ronaldo"></td>
+                        <td class="container__list-row">20201111</td>
+                        <td class="container__list-row">Cristiano Ronaldo</td>
+                        <td class="container__list-row">IT1-01</td>
+                        <td class="container__list-row">K65</td>
+                        <td class="container__list-row">cristianoronaldo@gmail.com</td>
+                        <td class="container__list-row">11111111</td>
+                        <td class="container__list-row">Hà Nội, Việt Nam</td>
+                        <td class="container__list-row">Nghỉ học</td>
+                    </tr>
+                    <tr>
+                        <td class="container__list-row">3</td>
+                        <td class="container__list-row"><img class="container__list-img" src="./assets/image/sonheungmin.jpg" alt="anh cua sonhoungmin"></td>
+                        <td class="container__list-row">20202222</td>
+                        <td class="container__list-row">Son Heung-min</td>
+                        <td class="container__list-row">IT1-01</td>
+                        <td class="container__list-row">K65</td>
+                        <td class="container__list-row">sonheungmin@gmail.com</td>
+                        <td class="container__list-row">22222222</td>
+                        <td class="container__list-row">Hà Nội, Việt Nam</td>
+                        <td class="container__list-row">Đang học</td>
+                    </tr>
+                    <tr>
+                        <td class="container__list-row">4</td>
+                        <td class="container__list-row"><img class="container__list-img" src="./assets/image/neymar.jpg" alt="anh cua neymar"></td>
+                        <td class="container__list-row">20203333</td>
+                        <td class="container__list-row">Neymar</td>
+                        <td class="container__list-row">IT1-01</td>
+                        <td class="container__list-row">K65</td>
+                        <td class="container__list-row">neymar@gmail.com</td>
+                        <td class="container__list-row">33333333</td>
+                        <td class="container__list-row">Hà Nội, Việt Nam</td>
+                        <td class="container__list-row">Đang học</td>
+                    </tr>
+                    <tr>
+                        <td class="container__list-row">5</td>
+                        <td class="container__list-row"><img class="container__list-img" src="./assets/image/mpape.jpg" alt="anh cua mpape"></td>
+                        <td class="container__list-row">20204444</td>
+                        <td class="container__list-row">Kylian Mbappé</td>
+                        <td class="container__list-row">IT1-01</td>
+                        <td class="container__list-row">K65</td>
+                        <td class="container__list-row">kylianmbappé@gmail.com</td>
+                        <td class="container__list-row">44444444</td>
+                        <td class="container__list-row">Hà Nội, Việt Nam</td>
+                        <td class="container__list-row">Đang học</td>
+                    </tr>
+                    <tr>
+                        <td class="container__list-row">6</td>
+                        <td class="container__list-row"><img class="container__list-img" src="./assets/image/bruyne.jpg" alt="anh cua bruyne"></td>
+                        <td class="container__list-row">20205555</td>
+                        <td class="container__list-row">Kevin De Bruyne</td>
+                        <td class="container__list-row">IT1-01</td>
+                        <td class="container__list-row">K65</td>
+                        <td class="container__list-row">kevindebruyne@gmail.com</td>
+                        <td class="container__list-row">55555555</td>
+                        <td class="container__list-row">Hà Nội, Việt Nam</td>
+                        <td class="container__list-row">Đang học</td>
+                    </tr>
+                    <tr>
+                        <td class="container__list-row">7</td>
+                        <td class="container__list-row"><img class="container__list-img" src="./assets/image/salah.jpg" alt="anh cua salah"></td>
+                        <td class="container__list-row">20206666</td>
+                        <td class="container__list-row">Mohamed Salah</td>
+                        <td class="container__list-row">IT1-01</td>
+                        <td class="container__list-row">K65</td>
+                        <td class="container__list-row">mohamedsalah@gmail.com</td>
+                        <td class="container__list-row">66666666</td>
+                        <td class="container__list-row">Hà Nội, Việt Nam</td>
+                        <td class="container__list-row">Đang học</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!-- end container -->
+        <footer class="footer">
+            <div class="footer__title">
+                <div class="footer__title-h1">
+                    HỆ THỐNG DO 1 SINH VIÊN TRƯỜNG ĐẠI HỌC BÁCH KHOA HÀ NỘI THIẾT KẾ & PHÁT TRIỂN
+                </div>
+            </div>
+            <div class="footer__icon">
+                <i class="footer__icon-icon fa-regular fa-heart"></i>
+            </div>
+            <ul class="footer__list">
+                <li class="footer__list-item-c">Liên hệ chúng tôi:</li>
+                <li class="footer__list-item"><a href=""><i class="footer__list-item-icon fa-brands fa-facebook"></i></a></li>
+                <li class="footer__list-item"><a href=""><i class="footer__list-item-icon fa-brands fa-instagram"></i></a></li>
+                <li class="footer__list-item"><a href=""><i class="footer__list-item-icon fa-brands fa-twitter"></i></a></li>
+                <li class="footer__list-item"><a href=""><i class="footer__list-item-icon fa-solid fa-envelope"></i></a></li>
+            </ul>
+        </footer>
+        <!-- and footer -->
+    </div>
+    <!-- end app -->
+</body>
+</html>
