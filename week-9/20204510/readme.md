@@ -33,7 +33,10 @@
 ##### Dùng hàm componentWillUnmount() để unmount một component và nó sẽ được xóa khỏi giao diện trang web.
 
 ### 3. JSX
-#### Example: const element = <h1>Hello, world!</h1>;
+#### Example:
+```reactjs
+const element = <h1>Hello, world!</h1>;
+```
 
 #### 3.1 Khái niệm
 ##### * JSX là cú pháp mở rộng của Javascript, giúp tạo ra các React component 
