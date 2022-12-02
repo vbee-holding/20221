@@ -114,14 +114,10 @@ Chỉ có một built-in method của react khi một component đến thời đ
 - Vẫn là camelCase, sự kiện sẽ viết là onClick, mouseOver...
 - Xử lý sẽ được viết trong ngoặc nhọn : onClick = {shoot}...
 - Mã HTML xưa trông như này:
-<button onclick="activateLasers()">
-  Activate Lasers
-</button>
+![plot](./img10.png)
 
 - Giờ dùng react ta sẽ viết là:
-<button onClick={activateLasers}>
-  Activate Lasers
-</button>
+![plot](./img11.png)
 
 - Với JSX, ta cần truyền một hàm để bắt sự kiện, thay vì một chuỗi như HTML thông thường.
 - Đến khi cần listen cái event xảy ra, ta dùng các event listeners.
