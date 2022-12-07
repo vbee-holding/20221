@@ -1,0 +1,55 @@
+.intro {
+    text-align: center;
+}
+
+.btn-add-new {
+    margin-right: 5px;
+    margin-bottom: 10px;
+}
+
+.table-inform,
+th,
+td {
+    text-align: center;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.table-inform {
+    width: 100%;
+}
+
+td {
+    width: 200px;
+}
+
+.member-img {
+    display: flex;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.student-option {
+    // display: flex;
+    // flex-direction: column;
+    // max-width: 80px;
+    margin: 5px auto;
+    width: 100%;
+
+    tr {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+}
+
+.student-option a {
+    align-items: center;
+
+    color: black;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    font-size: 14px;
+}

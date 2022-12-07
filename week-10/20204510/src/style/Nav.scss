@@ -1,0 +1,56 @@
+.header {
+    display: inline-block;
+    align-items: center;
+    background-color: #AA1D2B;
+    width: 100%;
+}
+
+.header-img {
+    display: inline-block;
+    vertical-align: middle;
+    width: 55px;
+}
+
+.header-intro {
+    display: inline-block;
+    padding: 10px;
+}
+
+.title,
+.school-name {
+    color: white;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.school-name {
+    font-size: 14px;
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: white;
+    border-bottom: 1px solid gray;
+}
+
+.topnav a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    background-color: red;
+    color: white;
+}
+
+.topnav a.active {
+    background-color: red;
+    color: white;
+}
