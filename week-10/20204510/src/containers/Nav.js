@@ -1,11 +1,12 @@
-import '../style/Nav.scss'
 import { NavLink } from 'react-router-dom';
+import Link from '../constants/Link';
+import '../style/Nav.scss'
 
 const Nav = () => {
     return (
         <>
             <div className="header">
-                <img src="https://storage.googleapis.com/hust-files/5807675312963584/images/hust-logo-official_.3m.jpeg" className="header-img" alt='navimg' />
+                <img src={Link.link_img_header} className="header-img" alt='navimg' />
                 <div className="header-intro">
                     <div className="title">HỆ THỐNG QUẢN TRỊ ĐẠI HỌC TRỰC TUYẾN</div>
                     <div className="school-name">ĐẠI HỌC BÁCH KHOA HÀ NỘI</div>
@@ -19,4 +20,3 @@ const Nav = () => {
 }
 
 export default Nav;
-

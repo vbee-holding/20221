@@ -1,9 +1,8 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Button, Form } from "react-bootstrap";
+import { addStudent } from "../apis/studentAPI";
 
-const EditStudent = (props) => {
-    const id = props.idToEdit;
+const AddStudent = () => {
     const [student, setStudent] = useState({
         name: "",
         mssv: "",
@@ -17,35 +16,26 @@ const EditStudent = (props) => {
 
     const { name, mssv, classStudent, schoolYear, email, phone, address, image } = student;
 
-    const onInputChange = (e) => {
+    const onInputChange = e => {
         setStudent({ ...student, [e.target.name]: e.target.value });
     }
 
-    useEffect(() => {
-        loadStudent();
-    }, []);
-
-    const onSubmitEdit = async (event) => {
-        event.preventDefault();
-        await axios.put(`http://localhost:3300/students/${id}`, student);
-        alert('Sửa thông tin sinh viên thành công');
+    const onSubmitAddNew = async (e) => {
+        e.preventDefault();
+        await addStudent(student);
+        alert('Thêm sinh viên thành công');
         window.location.reload();
-    }
-
-    const loadStudent = async () => {
-        const result = await axios.get(`http://localhost:3300/students/${id}`);
-        setStudent(result.data);
     }
 
     return (
         <div>
-            <Form onSubmit={e => onSubmitEdit(e)}>
+            <Form onSubmit={(e) => onSubmitAddNew(e)}>
                 <Form.Group className="mb-3" >
                     <Form.Label>Họ tên sinh viên</Form.Label>
                     <Form.Control
                         required
                         type="text"
-                        placeholder="Enter your name"
+                        placeholder="Nhập tên sinh viên"
                         name="name"
                         value={name}
                         onChange={e => onInputChange(e)} />
@@ -56,7 +46,7 @@ const EditStudent = (props) => {
                     <Form.Control
                         required
                         type="text"
-                        placeholder="Enter student id"
+                        placeholder="Nhập mã số sinh viên"
                         name="mssv"
                         value={mssv}
                         onChange={e => onInputChange(e)}
@@ -67,7 +57,7 @@ const EditStudent = (props) => {
                     <Form.Label>Lớp sinh viên</Form.Label>
                     <Form.Control
                         type="text"
-                        placeholder="Enter student's class"
+                        placeholder="Nhập lớp sinh viên"
                         name="classStudent"
                         value={classStudent}
                         onChange={e => onInputChange(e)}
@@ -78,7 +68,7 @@ const EditStudent = (props) => {
                     <Form.Label>Khóa</Form.Label>
                     <Form.Control
                         type="number"
-                        placeholder="Enter school year"
+                        placeholder="Nhập khóa sinh viên"
                         name="schoolYear"
                         value={schoolYear}
                         onChange={e => onInputChange(e)}
@@ -89,7 +79,7 @@ const EditStudent = (props) => {
                     <Form.Label>Email</Form.Label>
                     <Form.Control
                         type="email"
-                        placeholder="Enter email"
+                        placeholder="Nhập email"
                         name="email"
                         value={email}
                         onChange={e => onInputChange(e)}
@@ -100,7 +90,7 @@ const EditStudent = (props) => {
                     <Form.Label>Số điện thoại</Form.Label>
                     <Form.Control
                         type="text"
-                        placeholder="Enter student's phone number"
+                        placeholder="Nhập số điện thoại"
                         name="phone"
                         value={phone}
                         onChange={e => onInputChange(e)}
@@ -111,7 +101,7 @@ const EditStudent = (props) => {
                     <Form.Label>Địa chỉ</Form.Label>
                     <Form.Control
                         type="text"
-                        placeholder="Enter student's address"
+                        placeholder="Nhập địa chỉ"
                         name="address"
                         value={address}
                         onChange={e => onInputChange(e)}
@@ -122,7 +112,7 @@ const EditStudent = (props) => {
                     <Form.Label>Ảnh sinh viên</Form.Label>
                     <Form.Control
                         type="text"
-                        placeholder="Enter URL"
+                        placeholder="Nhập đường dẫn ảnh"
                         name="image"
                         value={image}
                         onChange={e => onInputChange(e)}
@@ -130,12 +120,11 @@ const EditStudent = (props) => {
                 </Form.Group>
 
                 <Button variant="primary" type="submit">
-                    Save Change
+                    Submit
                 </Button>
             </Form>
         </div>
     )
-
 }
 
-export default EditStudent;
+export default AddStudent;

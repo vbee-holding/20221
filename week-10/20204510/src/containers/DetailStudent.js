@@ -1,5 +1,5 @@
-import axios from "axios";
 import { useEffect, useState } from "react"
+import { getStudent } from "../apis/studentAPI";
 import '../style/DetailStudent.scss'
 
 const DetailStudent = (props) => {
@@ -15,13 +15,14 @@ const DetailStudent = (props) => {
     })
 
     const id = props.idToShowDetail;
+
     useEffect(() => {
         loadStudent();
     }, [])
-
+    
     const loadStudent = async () => {
-        const result = await axios.get(`http://localhost:3300/students/${id}`);
-        setStudent(result.data);
+        const result = await getStudent(id)
+        setStudent(result);
     }
     return (
         <>

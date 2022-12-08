@@ -1,8 +1,9 @@
-import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button, Form } from "react-bootstrap";
+import { getStudent, updateStudent } from "../apis/studentAPI";
 
-const AddStudent = () => {
+const EditStudent = (props) => {
+    const id = props.idToEdit;
     const [student, setStudent] = useState({
         name: "",
         mssv: "",
@@ -16,20 +17,29 @@ const AddStudent = () => {
 
     const { name, mssv, classStudent, schoolYear, email, phone, address, image } = student;
 
-    const onInputChange = e => {
+    const onInputChange = (e) => {
         setStudent({ ...student, [e.target.name]: e.target.value });
     }
 
-    const onSubmitAddNew = async (e) => {
-        e.preventDefault();
-        await axios.post("http://localhost:3300/students", student);
-        alert('Thêm sinh viên thành công');
+    useEffect(() => {
+        loadStudent();
+    }, []);
+
+    const onSubmitEdit = async (event) => {
+        event.preventDefault();
+        await updateStudent(id, student);
+        alert('Sửa thông tin sinh viên thành công');
         window.location.reload();
+    }
+
+    const loadStudent = async () => {
+        const result = await getStudent(id)
+        setStudent(result);
     }
 
     return (
         <div>
-            <Form onSubmit={e => onSubmitAddNew(e)}>
+            <Form onSubmit={e => onSubmitEdit(e)}>
                 <Form.Group className="mb-3" >
                     <Form.Label>Họ tên sinh viên</Form.Label>
                     <Form.Control
@@ -120,11 +130,12 @@ const AddStudent = () => {
                 </Form.Group>
 
                 <Button variant="primary" type="submit">
-                    Submit
+                    Save Change
                 </Button>
             </Form>
         </div>
     )
+
 }
 
-export default AddStudent;
+export default EditStudent;

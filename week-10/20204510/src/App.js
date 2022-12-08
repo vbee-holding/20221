@@ -1,7 +1,6 @@
 import { Routes, Route, BrowserRouter as Router } from 'react-router-dom';
-import DetailStudent from './components/DetailStudent';
-import Nav from './components/Nav';
-import Students from './components/Students';
+import Nav from './containers/Nav';
+import Students from './containers/Students';
 
 function App() {
   return (

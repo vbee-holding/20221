@@ -1,10 +1,12 @@
-import '../style/Students.scss'
 import { useEffect, useState } from 'react'
-import axios from 'axios';
-import { Modal, Button } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
+import CustomModal from '../component/CustomModal';
 import AddStudent from './AddStudent';
 import EditStudent from './EditStudent';
 import DetailStudent from './DetailStudent';
+import { getAllStudent } from '../apis/studentAPI';
+import { deleteStudent } from '../apis/studentAPI';
+import '../style/Students.scss';
 
 const Students = () => {
     const [students, setStudents] = useState([]);
@@ -29,13 +31,13 @@ const Students = () => {
     }, [])
 
     const loadStudents = async () => {
-        const result = await axios.get("http://localhost:3300/students");
-        setStudents(result.data);
+        const result = await getAllStudent();
+        setStudents(result);
     }
 
-    const deleteStudent = async (id) => {
+    const handleDeleteStudent = async (id) => {
+        await deleteStudent(id);
         alert('Xóa sinh viên thành công');
-        await axios.delete(`http://localhost:3300/students/${id}`);
         loadStudents();
     }
 
@@ -52,40 +54,28 @@ const Students = () => {
     }
     return (
         <>
-            <Modal show={showAddNew} onHide={handleCloseAddNew}>
-                <Modal.Header closeButton>
-                    <Modal.Title>Thêm sinh viên</Modal.Title>
-                </Modal.Header>
+            <CustomModal 
+                show={showAddNew}
+                onAction={handleCloseAddNew}
+                title={'Thêm sinh viên'}
+                form={<AddStudent/>}
+            />
 
-                <Modal.Body>
-                    <AddStudent />
-                </Modal.Body>
-            </Modal>
+            <CustomModal 
+                show={showEdit}
+                onAction={handleCloseEdit}
+                title={'Chỉnh sửa thông tin sinh viên'}
+                form={<EditStudent idToEdit={idToEdit} />}
+            />            
 
-            <Modal show={showEdit} onHide={handleCloseEdit}>
-                <Modal.Header closeButton>
-                    <Modal.Title>Chỉnh sửa thông tin sinh viên</Modal.Title>
-                </Modal.Header>
-
-                <Modal.Body>
-                    <EditStudent idToEdit={idToEdit}/>
-                </Modal.Body>
-            </Modal>
-
-            <Modal size="lg" show={showDetail} onHide={handleCloseDetail}>
-                <Modal.Header closeButton>
-                    <Modal.Title>Chi tiết thông tin</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                    <DetailStudent idToShowDetail={idToShowDetail} />
-                </Modal.Body>
-
-                <Modal.Footer>
-                    <Button variant="secondary" onClick={handleCloseDetail}>
-                        Close
-                    </Button>
-                </Modal.Footer>
-            </Modal>
+            <CustomModal 
+                isDetail={'true'}
+                size={'lg'}
+                show={showDetail}
+                onAction={handleCloseDetail}
+                title={'Chi tiết thông tin'}
+                form={<DetailStudent idToShowDetail={idToShowDetail} />}
+            />  
 
             <h2 className='intro'>Student Information</h2>
             <Button className="btn-add-new" variant="primary" onClick={handleShowAddNew}>
@@ -118,7 +108,7 @@ const Students = () => {
                                 <table className='student-option'>
                                     <button onClick={() => handleDetail(student._id)}>Detail</button>
                                     <button onClick={() => handleEdit(student._id)}>Edit</button>
-                                    <button onClick={() => deleteStudent(student._id)}>Delete</button>
+                                    <button onClick={() => handleDeleteStudent(student._id)}>Delete</button>
                                 </table>
                             </td>
                         </tr>
