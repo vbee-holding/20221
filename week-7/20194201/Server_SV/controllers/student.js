@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const multer = require("multer");
+const multer = require("multer")
 const studentModel = require("../models/student");
 const studentController ={};
 
@@ -19,15 +19,14 @@ studentController.addStudent = (req, res, next) =>{
         course: req.body.course,
         email: req.body.email,
         phone: req.body.phone,
-        address: req.body.address,
+        address: req.body.email,
         avatar: avatar
+
     });
     return student
         .save()
         .then(newStudent =>{
-            
             return res.status(201).json({
-                
                 success:true,
                 message:"New student created succesfully.",
                 data: newStudent
@@ -43,12 +42,15 @@ studentController.addStudent = (req, res, next) =>{
         });
 
 }
-studentController.getAllStudent = async(req,res, next) =>{
+studentController.getAllStudent = async(req,res) =>{
     studentModel.find()
         . select("_id mssv name class course email phone address avatar")
         .then(result =>{
-            
-            return  res.status(200).json(result);
+            return  res.status(200).json({
+                success: true,
+                message: " List of all student",
+                data: result
+            });
         })
         .catch(error =>{
             res.status(500).json({
@@ -59,16 +61,13 @@ studentController.getAllStudent = async(req,res, next) =>{
             });
         })
 }
-studentController.getStudent = async(req, res, next) =>{
+studentController.getStudent = async(req, res) =>{
     const mssv = req.params.mssv;
     const name = req.params.name;
-    const id = req.params.id
     studentModel.find({
         $or:[
-            {_id: id},
             {mssv: mssv},
-            {name: name},
-            
+            {name: name}
         ]
     })
        .then(result =>{
@@ -79,7 +78,11 @@ studentController.getStudent = async(req, res, next) =>{
             });
         }
 
-        res.status(200).json(result);
+        res.status(200).json({
+            success: true,
+            message: "Student found",
+            data: result
+        });
        })
        .catch(error =>{
         res.status(500).json({
@@ -89,7 +92,7 @@ studentController.getStudent = async(req, res, next) =>{
         });
        })
 }
-studentController.updateStudent = async(req, res, next) =>{
+studentController.updateStudent = async(req, res) =>{
     const idStudent = req.params.id;
     const updates = req.body;
 
@@ -122,7 +125,7 @@ studentController.updateStudent = async(req, res, next) =>{
        })
 
 }
-studentController.deleteStudent = async(req, res, next) =>{
+studentController.deleteStudent = async(req, res) =>{
     
     const id = req.params.id;
     studentModel.deleteOne({ _id: id })
