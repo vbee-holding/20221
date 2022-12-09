@@ -3,7 +3,7 @@ const multer = require("multer");
 const studentModel = require("../models/student");
 const studentController ={};
 
-studentController.addStudent = (req, res, next) =>{
+studentController.addStudent = (req, res,next) =>{
     console.log(req.file);
     const files = req.file;
     if(!files){
