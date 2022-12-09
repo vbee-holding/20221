@@ -1,0 +1,15 @@
+.mem-img {
+    float: left;
+    border-radius: 2px;
+    height: 300px;
+    width: calc(100%/3);
+}
+
+.mem-inform {
+    display: flex;
+    flex-direction: row;
+}
+
+.detail-inform {
+    margin-left: 20px;
+}
