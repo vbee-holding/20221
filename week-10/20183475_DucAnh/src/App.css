@@ -1,0 +1,71 @@
+.listsv {
+  min-height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header{
+  height: 100px;
+  text-align: center;
+  margin: 10px;
+}
+.h1{
+  font-size: 28px;
+  color: #015c92;
+}
+.hr1{
+  margin: 0px 10px;
+  background-color: #015c92;
+}
+table td {
+  width: 200px;
+  height: 30px;
+  background-color: #bce6ff;
+  text-align: center;
+  color: #015c92;
+}
+
+
+table td button {
+  padding: 5px 10px;
+  border-radius: 5%;
+  cursor: pointer;
+}
+table td button.edit {
+  border: 1px solid blue;
+  background-color: #015c92;
+  color: white;
+}
+table td button.edit:hover {
+  background-color: rgb(3, 71, 3);
+}
+table td button.delete {
+  border: 1px solid red;
+  background-color: #bce6ff;
+  color: #015c92;
+  margin-left: 10px;
+}
+table td button.delete:hover {
+  background-color: red;
+}
+
+
+.addForm {
+  margin-bottom: 30px;
+}
+.addForm input {
+  min-width: 200px;
+  height: 35px;
+  margin: 5px 5px;
+}
+.addForm button {
+  width: 120px;
+  color: #bce6ff;
+  height: 35px;
+  background-color: #015c92;
+  margin: 0px 5px;
+}
+.addForm button:hover {
+  background-color: #bce6ff;
+  color: #015c92;
+}
